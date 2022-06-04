@@ -10,3 +10,9 @@
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+*.log
+*.pyc
+__pycache__/
+db-volumes/
+db.sqlite3
