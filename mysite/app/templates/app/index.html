@@ -2,15 +2,16 @@
 
 {% block content %}
 <div class="card top d-flex flex-column justify-content-end mb-4">
-    <!--<img src="{{ profile_data.topimage.url }}" alt="">-->
+    <img src="https://pakutaso.cdn.rabify.me/shared/img/thumb/TKL_K1_2450.jpg?d=1420" alt="">
     <div class="overlay text-white p-5">
         <h4 class="title">{{ profile_data.title }}</h4>
         <h5 class="subtitle">{{ profile_data.subtitle }}</h5>
         <h3>{{ profile_data.name }}</h3>
         <h3>{{ profile_data.job }}</h3>
         <h3>{{ profile_data.introduction }}</h3>
-        <h3>{{ profile_data.github }}</h3>
-        <img src="{{ profile_data.topimage.url}}">
+        {% if profile_data.github%}
+            <a href="{{ profile_data.github}}">github</a>
+        {% endif %}
     </div>
 </div>
 
