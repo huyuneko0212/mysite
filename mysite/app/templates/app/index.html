@@ -1,8 +1,8 @@
 {% extends 'app/base.html' %}
-
+{% load static %}
 {% block content %}
 <div class="card top d-flex flex-column justify-content-end mb-4">
-    <!--<img src="https://pakutaso.cdn.rabify.me/shared/img/thumb/TKL_K1_2450.jpg?d=1420" alt="">-->
+    <img src="{% static 'img/top.jpg' %}" class="img-responsive">
     <div class="overlay text-white p-5">
         <h4 class="title">{{ profile_data.title }}</h4>
         <h5 class="subtitle">{{ profile_data.subtitle }}</h5>
