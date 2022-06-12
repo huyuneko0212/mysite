@@ -20,15 +20,16 @@
         <div class="col-6 col-md-3 mb-3">
             <div class="card work-thumbnail">
                 {% if work.thumbnail %}
-                    <img src="{{ work.thumbnail.url }}" alt="" class="work-img">
+                    <img src="{{ work.thumbnail }}" alt="" class="work-img">
                 {% else %}
-                    <img src="{{ work.img.url }}" alt="" class="work-img">
+                    <img src="{{ work.img }}" alt="" class="work-img">
                 {% endif %}
                 <div class="work-title text-center">
                     <p class="mb-0">
                     {{ work.title }}
                     </p>
                 </div>
+                
                 <a href="{% url 'detail' work.id %}" class="stretched-link work"></a>
             </div>
 

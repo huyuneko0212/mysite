@@ -15,8 +15,8 @@ class Profile(models.Model):
         return self.name
 class Work(models.Model):
     title = models.CharField('タイトル', max_length=100)
-    image = models.ImageField(upload_to='images', verbose_name="イメージ画像")
-    thumbnail = models.ImageField(upload_to='images',  verbose_name="サムネイル")
+    image = models.CharField('トップ画像URL', max_length=255)
+    thumbnail = models.CharField('サムネイルURL', max_length=255)
     skill = models.CharField('スキル', max_length=100)
     url=models.CharField('URL',max_length=100,null=True,blank=True)
     created = models.DateTimeField('作成日')
