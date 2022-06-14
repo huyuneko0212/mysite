@@ -1,0 +1,60 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h3 class="mb-4">Profile</h3>
+<div class="mb-5">
+    <div class="row">
+        <div class="col-md-8">
+            <p>{{ profile_data.introduction |linebreaksbr}}</p>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center px-5 py-4">
+                <div class="avatar mb-3">
+                    <img src="https://lh3.googleusercontent.com/MncA3HewdkoRhTGVpyc8umIPQSFBmkt5j4R1Gph5ZeDZgirxdw9wm97TQ9tpVG3nmSvay6yWmJfaCnPTEVltzXH7mB82kny93kCO3QcrSmDg1KBl43oy4_Pms03uITy_NIo-HPfK4CK7MsNe2Q6REUYCVduZNVfz_53ukoeLL0FboZShKubLibSksqQLBZKh09ASxP2L5IobzU3qfdnxMb3R0zdGmvscPibWZKMFIWwDevmcQk0RNL5eLTlzQulhRNC0P16t1D9L5tTg3sTvXt2n5AScPw-B4AOyD6GFQoX-JvfkaUqobyRVkOfgn3QyNJZlSXoMeQQNSkp-ffrtzmI45TPVknwzR-mMlXmu_LLaeqem0x7LL0mBsvoKhlKogn7RUYyPoGVFDa1ta95BsTp7YwLQRzj7LofVnxolN0R-XR25wiaeEJDB41PX-HJwfaUT5dzoJ22c0gwHUmwuVzFJmiTg-jcMZVvzv3R9GpVO9hzewclJ5H5zpiqk9gPaS3I1aNgtYDVsHrmcWVVBdh-phVZ4IwIEpzqviVhlLqkM8a7Kq4AfE4uOhAmSY0I7EdCfZ-umsGQNGaCT9Mg_5qzmtttxLBbWZTpDQu3LcdnhO9XIUOJoagB6qoHGjRAvQEKR2Dic74sDoAT9cqbruvIHigJen-Kp_5Sf3NaIAZB5_U1ARbZu9n7LFUBPWasTdDhYs0kFlEUdTZBV7xyKixVcTlSk94sW_y55vjcVzczi6zw3-mddNQweZvVADfMUg8UccfivqO6XDHCZKlQIIfFEZHo3PO4Cia8=w150-h155-no?authuser=0" alt="" class="card-img-top rounded-circle">
+                </div>
+                <h5 class="font-weight-bolder">{{profile_data.name}}</h5>
+                <p class="mb-3 small text-center">{{profile_data.job |linebreaksbr}}</p>
+                <div class="d-flex justify-content-around">
+                    {% if profile_data.github %}
+                    <a href="{{profile_data.github}}" target="_blank"><i class="fab fa-github fa-lg rounded btn-dark icon"></i></a>
+                    {% endif %}
+
+                    {% if profile_data.github %}
+                    <a href="{{profile_data.twitter}}" target="_blank"><i class="fab fa-twitter fa-lg rounded btn-primary icon"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if exprience_data %}
+<h3 class="mb-4">Experience</h3>
+<div class="mb-5">
+    {% for experience in exprience_data %}
+    <div class="d-flex justify-content-between">
+        <h5>{{experience.occupation}}</h5>
+        <small class="small text-secondary">{{experience.company}}</small>
+        <p class="mb-1">{{experience.period}}</p>
+    </div>
+    <p class="mb-1">{{experience.description}}</p>
+    <p>{{experience.place}}</p>
+    <hr>
+    {% endfor %}
+</div>
+{%endif%}
+
+{% if education_data %}
+<h3 class="mb-4">Education</h3>
+<div class="mb-5">
+    {% for education in education_data %}
+    <div class="d-flex justify-content-between">
+        <h5>{{education.course}}</h5>
+        <small class="small text-secondary">{{education.school}}</small>
+        <p class="mb-1">{{education.period}}</p>
+    </div>
+    <p>{{education.place}}</p>
+    <hr>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
