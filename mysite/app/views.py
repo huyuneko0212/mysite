@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.generic import View
 from .models import Profile,Work,Exprience,Education
 
+
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         profile_data = Profile.objects.all()
@@ -34,3 +35,4 @@ class AboutView(View):
             'exprience_data':exprience_data,
             'education_data':education_data
         })
+
