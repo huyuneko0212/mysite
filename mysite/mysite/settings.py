@@ -139,6 +139,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-print("BASE",BASE_DIR)
+#
+# print("BASE",BASE_DIR)
 
 
