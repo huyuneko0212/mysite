@@ -84,8 +84,10 @@ class ContactView(View):
                 message.send()
             except BadHeaderError:
                 return HttpResponse('無効なヘッダが検出されました。')
-            return redirect('index')
+            return redirect('thanks')
         return render(request, 'app/contact.html',{
             'form': form
         })
-    
+class ThanksView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'app/thanks.html')
